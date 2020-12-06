@@ -389,7 +389,7 @@ $('#idForm_tra').bootstrapValidator({
 					message : "El monto es obligatorio"
 				},
 				regexp :{
-					regexp: /^(([0-9]*)|([0-9]*[\.][0-9]))$/ ,
+					regexp: /^(([0-9]*)|([0-9]*[\.][0-9][0-9]))$/ ,
                     message: 'El monto es entero o decimal con un dígito'
 				}
 			}	
