@@ -390,7 +390,7 @@ $('#idForm_tra').bootstrapValidator({
 				},
 				regexp :{
 					regexp: /^(([0-9]*)|([0-9]*[\.][0-9][0-9]))$/ ,
-                    message: 'El monto es entero o decimal con un dígito'
+                    message: 'El monto es entero o decimal con dos dígitos'
 				}
 			}	
         },
