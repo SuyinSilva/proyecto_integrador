@@ -71,7 +71,7 @@
         Notificación
       </div>
       <li class="nav-item">
-        <a class="nav-link" href="/verConfiguracion">
+        <a class="nav-link" href="verConfiguracion">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Configuracion de Notificación</span></a>
       </li>
