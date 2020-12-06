@@ -221,7 +221,7 @@
 								<th>ID</th>
 								<th>NOMBRE</th>
 								<th>APELLIDO</th>
-								<th>N CUENTA</th>
+								<th>NOTIFICACIONES</th>
 						
 											</tr>
 										</thead>
