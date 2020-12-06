@@ -17,6 +17,19 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  
+  <!-- VALIDACIONESSSSSSSSSSSSSSSSSSSSSSSSS -->
+  
+<link rel="stylesheet" href="css/bootstrapValidator.css"/>
+<script type="text/javascript" src="js/bootstrapValidator.js"></script>
+  
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrapValidator.js"></script>
+
+<link rel="stylesheet" href="css/dataTables.bootstrap.min.css"/>
+<link rel="stylesheet" href="css/bootstrapValidator.css"/>
+  
+  
 
 </head>
 
@@ -65,7 +78,11 @@
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Transferencias</span></a>
       </li>
-
+       <li class="nav-item">
+        <a class="nav-link" href="/verConfiguracion">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Configuración</span></a>
+      </li>
       <!-- Nav Item - Tables -->
 
       <!-- Divider -->
@@ -133,25 +150,14 @@
                 </h6>
     
                    <div class="dropdown-item d-flex align-items-center  overflow-auto" href="#">
-                
-      
-        
                   <div style="height:300px;"  id="idNotificaciones"  >
-                    
                         <hr class="sidebar-divider d-none d-md-block">
                   </div>
-             
                </div>
-               
-     
                 <a class="dropdown-item text-center small text-gray-500" href="#">Mostrar todas las notificaciones</a>
               </div>
             </li>
-
             <!-- Nav Item - Messages -->
-        
-   
-
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
@@ -163,9 +169,6 @@
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
               
-            
-               
-             
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Salir
@@ -182,11 +185,29 @@
         
         
         
+        
+        
+        <div class="container" style="width: 60%; margin-top: 5%">
+        
+        
+        
+        
+        
+        
+        
         <!-- Begin Page Content -->
-        <div class="container-fluid">
-		<h4>Tranferencia BCP</h4>
-<form action="tranferencia" id="id_form" method="post"> 
-		
+      
+		 <h4>Tranferencia BCP</h4>
+         <form action="tranferencia" id="id_form" method="post">
+         <div class="col-md-4">
+							<c:if test="${sessionScope.MENSAJE != null }">
+									<div class="alert alert-success" id="success-alert">
+							 		   <button type="button" class="close" data-dismiss="alert">x</button>
+										${sessionScope.MENSAJE}				
+									</div>
+							</c:if>
+							<c:remove var="MENSAJE"/>
+						</div>
 			<div class="form-group">
 				<label class="control-label" for="id_cuenta_ori">Cuenta Origen</label>
 				<select id="id_cuenta_ori" name="cuentaOrigen" class='form-control'>
@@ -202,31 +223,17 @@
 			<div class="form-group">
 				<label class="control-label" for="id_cuenta_des">Cuenta Destino</label>
 				<input class="form-control" type="text" id="id_cuenta_des" name="cuentaDestino" placeholder="Ingrese el nombre">
+				<label class="control-label" for="id_cuenta_des_cli"></label>
 			</div>
 			
-		    
 			<div class="form-group">
 				<button type="submit" class="btn btn-primary" >Transferir</button>
 			</div>
-	
-
-	</form>
-
-        </div>
+	    </form>
+       </div>
         <!-- /.container-fluid -->
 
       </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
-          </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
 
     </div>
     <!-- End of Content Wrapper -->
@@ -258,7 +265,6 @@
     </div>
   </div>
 
-
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -275,39 +281,27 @@
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
+  
+  
 
 
 </body>
 <script>
-	
-
 	$(document).ready(function () {
-
 		var contador = 0;
-		
     	$.getJSON("cargaNotificaciones", {}, function(data){
     		$.each(data, function(index,item){
-  
-
    			 contador+=1;
-			
-   			
    			 $("#idNotificaciones").append("<h8>"+ item.mensaje +"</h8>");
    			 $("#idNotificaciones").append("<hr>");
     		});
-
     		 $('#noti_Counter')
              .css({ opacity: 0 })
              .text(contador)  // AÑADIR VALOR DINÁMICO (PUEDE EXTRAER DATOS DE LA BASE DE DATOS O XML).
              .css({ top: '14px' })
              .animate({ right: '0px', opacity: 1 }, 500);
-             
     	});
-    	
-
     	// MOSTRAR ANIMADO EL CONTADOR DE NOTIFICACIONES
-       
-
         $('#noti_Button').click(function () {
 
             // TOGGLE (MOSTRAR U OCULTAR) VENTANA DE NOTIFICACIONES.
@@ -318,9 +312,7 @@
                 // // CAMBIAR EL COLOR DE FONDO DEL BOTÓN. 
                 else $('#noti_Button').css('background-color');
             });
-
             $('#noti_Counter').fadeOut('slow');     // OCULTAR EL MOSTRADOR.
-
             return false;
         });
 
@@ -334,17 +326,77 @@
                 $('#noti_Button').css('background-color');
             }
         });
-
         $('#notifications').click(function () {
             return false;       // NO HACER NADA CUANDO SE HAGA CLIC EN EL CONTENEDOR
         });
     });
     </script>
-    <script type="text/javascript">
+ <script type="text/javascript">
 $.getJSON("cargaCuenta", {}, function(data){
 	$.each(data, function(index,item){
 		$("#id_cuenta_ori").append("<option value="+item.numero +">"+ item.numero +"</option>");
 	});
 });
 </script>
+ <script type="text/javascript">
+$.getJSON("cargaNombreCuenta", {}, function(data){
+	$.each(data, function(index,item){
+		$("#id_cuenta_des_cli").append("<option value="+item.nombre +">"+ item.nombre +"</option>");
+	});
+});
+</script>
+<script type="text/javascript">
+$("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+    $("#success-alert").slideUp(500);
+});
+</script>
+
+<script type="text/javascript">    
+    $(document).ready(function(){     
+        $('#id_form').bootstrapValidator({      
+        	 fields:{
+
+        		    monto :{
+        	    		selector : '#id_monto',
+        	    		validators :{
+        	    			notEmpty :{
+        	    				message :"El monto es obligatorio"
+        	    			},
+        		            lessThan: {
+        		                value: 10001,
+        		                inclusive: true,
+        		                message: 'Monto menos de 10000'
+        		            },
+        		            greaterThan: {
+        		                value: 0,
+        		                inclusive: true,
+        		                message: 'El monto tiene que ser mayor a 0'
+        		            }
+        	    		}
+        	    	}
+
+        		 cuentaDestino:{
+        				selector : '#id_cuenta_des',
+        			 	validators:{
+        			 		notEmpty:{
+        			 			message:'El Campo de Cuenta Destino es obligatorio'	
+        			 		},
+        			 		
+        			 		digits : {
+						           message : 'El Campo de Cuenta Destino solo permite ingresar números'
+						    },
+						    
+						    regexp: {
+    	                        regexp: /^[0-9]{15}$/,
+    	                        message: 'El Campo de Cuenta Destino solo acepta 15 números enteros'
+    	                    },
+        			 	}
+        		 }
+
+        	 }
+        });   
+			
+    });    
+</script>
+
 </html>

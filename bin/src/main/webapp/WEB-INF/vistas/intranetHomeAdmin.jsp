@@ -184,7 +184,8 @@
 					
 					
 			<div class="container-fluid">
-				 <form accept-charset="UTF-8"  action="consultaCrudUsuario" class="simple_form" id="defaultForm2"  method="post">
+		
+						 <form accept-charset="UTF-8"  action="consultaCrudUsuario" class="simple_form" id="defaultForm2"  method="post">
 
 					<div class="row" style="height: 70px">
 						<div class="col-md-2" >
@@ -207,7 +208,36 @@
 						</div>
 					</div>
 					
-					<div class="row" > 
+
+		 		</form>
+				
+				
+				
+				
+				
+				
+ 
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			<!-- Mensaje de Abajo-->
+			
+			<div class="container-fluid"  >
+				<form action="mensaje" id="id_form" method="post">
+									<div class="row" > 
 						<div class="col-md-12">
 								<div class="content" >
 						<!--        <table id="tablePaginacion" class="table table-striped table-bordered" >    -->
@@ -233,7 +263,7 @@
 																											<td>
 														<!--  	<a href="#" class="btn btn-success">  -->
 							  							<i class="far fa-envelope"></i>	
-							  							<input type="checkbox"   value="sdf" /></a>
+							  							<input type="checkbox"  name="idCliente" value="${x.idCliente}" />
 														</td>
 													</tr>
 												</c:forEach>
@@ -245,35 +275,6 @@
 								</div>	
 						</div>
 					</div>
-		 		</form>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			<!-- Mensaje de Abajo-->
-			<div class="container-fluid"  >
-				<form class="form-neon" action="">
 						<div class="row justify-content-md"  >
 							<div class="col-12 col-md-6">
 						
@@ -282,7 +283,10 @@
 							<td>
 								<div class="form-group" style="width:800px; margin-left: 5px">
 								<label for="inputSearch" class="bmd-label-floating"    style="margin-left: 10px; ">Mensaje</label>	
-			<input type="text" class="form-control" name="busqueda-" id="inputSearch" maxlength="90">
+			<input class="form-control" type="text" id="id_texto" name="texto" placeholder="Ingrese el mensaje">
+
+		
+
 							</div>
 								</td>
 							<td>
@@ -297,6 +301,7 @@
 							</div>
 							</div>
 							</form>
+
 						</div>
 				<nav aria-label="Page navigation example">
 					<ul class="pagination justify-content-center">

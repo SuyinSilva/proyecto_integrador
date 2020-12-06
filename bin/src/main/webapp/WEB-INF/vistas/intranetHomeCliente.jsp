@@ -59,18 +59,35 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
 
-      <!-- Nav Item - Charts -->
+   <!-- Nav Item - Charts -->
       <li class="nav-item">
         <a class="nav-link" href="/verMovimiento">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Transferencias</span></a>
       </li>
-
+        <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+            <div class="sidebar-heading">
+        Notificación
+      </div>
+      <li class="nav-item">
+        <a class="nav-link" href="/verConfiguracion">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Configuracion de Notificación</span></a>
+      </li>
       <!-- Nav Item - Tables -->
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
-
+            <div class="sidebar-heading">
+        Tarjeta
+      </div>
+       <li class="nav-item">
+        <a class="nav-link" href="/verConfiguracionTarjeta">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Configuracion de Tarjeta</span></a>
+      </li>
+     
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
