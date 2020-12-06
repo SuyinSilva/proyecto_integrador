@@ -49,6 +49,16 @@ public class LoginController {
 	@Autowired
 	private HistorialNotificacionesService historialNotificacionesService;
 	
+	@RequestMapping("/verConfiguracion")
+	public String verConf() {
+		return "configuraciÃ³n";
+	}
+
+
+	@RequestMapping("/salidaConfiguracion")
+	public String regConfiguracion() {
+		return "configuraciÃ³n";
+	}
 
 	@RequestMapping("/")
 	public String ver() {
@@ -139,7 +149,7 @@ public class LoginController {
 		response.setHeader("Expires", "0");
 		response.setHeader("Pragma", "no-cache");
 
-		request.setAttribute("mensaje", "El usuario salió de Sesión");
+		request.setAttribute("mensaje", "El usuario saliï¿½ de Sesiï¿½n");
 		return "login";
 
 	}

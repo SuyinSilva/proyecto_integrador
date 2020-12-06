@@ -33,17 +33,7 @@ public class ConfiguraciónController {
 	private TarjetaService tarjetaService;
 
 	
-	
-	@RequestMapping("/verConfiguracion")
-	public String verConf() {
-		return "configuración";
-	}
 
-
-	@RequestMapping("/salidaConfiguracion")
-	public String regConfiguracion() {
-		return "configuración";
-	}
 	
 	@RequestMapping("/configuracionTarjeta")
 	public String configuracionTarjeta(Tarjeta x,HttpSession session) {

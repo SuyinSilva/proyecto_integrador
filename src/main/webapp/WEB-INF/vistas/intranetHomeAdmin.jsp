@@ -152,35 +152,7 @@
 				</h3>
 			</div>
 			<!-- Content here-->
-			<div class="container-fluid"  >
-				<form class="form-neon" action="">
-						<div class="row justify-content-md"  >
-							<div class="col-12 col-md-6">
-						
-							<table>
-							<tr>
-							<td>
-								<div class="form-group" style="width:400px; margin-left: 70px">
-									<label for="inputSearch" class="bmd-label-floating"    style="margin-left: 10px; ">Escribe el Nombre del Cliente que buscas</label>
-			<input type="text" class="form-control" name="busqueda-" id="inputSearch" maxlength="30">
-							</div>
-								</td>
-							
-								<td>
-							<div class="form-group" >
-							<p class="text-right" style="margin-right: 270px; margin-left: 20px ; margin-top: 25px ">
-									<button type="submit" class="btn btn-raised btn-info"><i class="fas fa-search"></i> &nbsp; BUSCAR</button>
-								</p>
-							</div>
-								</td>
-								</tr>
-							</table>
-								</div>
-							</div>
-								</form>
-						</div>
-					
-					
+
 					
 					
 			<div class="container-fluid">
