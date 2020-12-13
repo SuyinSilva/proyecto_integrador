@@ -33,7 +33,7 @@ public class ConfiguraciónController {
 		return "configuración";
 	}
 	
-	@RequestMapping("/configuracionNotificacion")
+/*	@RequestMapping("/configuracionNotificacion")
 	public String configuracionNotificacion(HttpSession session) {
 		ConfiguracionNotificacion objCon = (ConfiguracionNotificacion)	session.getAttribute("objCon");
 		Tarjeta objTarjeta = (Tarjeta)	session.getAttribute("objTarjeta");
@@ -47,7 +47,7 @@ public class ConfiguraciónController {
 		}
 		return "configuración";
 	}
-	
+	*/
 	@RequestMapping("/configuracionTarjeta")
 	public String configuracionTarjeta(Tarjeta x,HttpSession session) {
 		Tarjeta objTarjeta = (Tarjeta)	session.getAttribute("objTarjeta");
