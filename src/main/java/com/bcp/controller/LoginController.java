@@ -1,33 +1,20 @@
 package com.bcp.controller;
 
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import com.bcp.entidad.Cliente;
-import com.bcp.entidad.Cuenta;
-import com.bcp.entidad.HistorialCuenta;
 import com.bcp.entidad.HistorialNotificaciones;
 import com.bcp.entidad.Mensaje;
 import com.bcp.entidad.Opcion;
 import com.bcp.entidad.Rol;
 import com.bcp.entidad.Tarjeta;
 import com.bcp.entidad.TipoMovimiento;
-import com.bcp.entidad.Tranferencia;
 import com.bcp.servicio.ClienteService;
 import com.bcp.servicio.CuentaService;
 import com.bcp.servicio.HistorialNotificacionesService;
@@ -49,25 +36,12 @@ public class LoginController {
 	@Autowired
 	private HistorialNotificacionesService historialNotificacionesService;
 	
-	@RequestMapping("/verConfiguracion")
-	public String verConf() {
-		return "configuración";
-	}
-
-
-	@RequestMapping("/salidaConfiguracion")
-	public String regConfiguracion() {
-		return "configuración";
-	}
 
 	@RequestMapping("/")
 	public String ver() {
 		return "login";
 	}
-	@RequestMapping("/verConfiguracionTarjeta")
-	public String verTarjeta() {
-		return "configuracionTarjeta";
-	}
+	
 
 	@RequestMapping("/login")
 	public String login(Cliente cliente, HttpSession session, HttpServletRequest request) {

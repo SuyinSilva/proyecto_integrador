@@ -1,12 +1,8 @@
 package com.bcp.servicio;
 
 import java.util.List;
-
-import org.springframework.data.repository.query.Param;
-
 import com.bcp.entidad.Cliente;
 import com.bcp.entidad.Cuenta;
-import com.bcp.entidad.Tranferencia;
 
 
 public interface CuentaService {

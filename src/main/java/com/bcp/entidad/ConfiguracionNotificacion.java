@@ -1,5 +1,6 @@
 package com.bcp.entidad;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -35,5 +36,6 @@ public class ConfiguracionNotificacion {
 	@JoinColumn(name = "idTarjeta")
 	private Tarjeta tarjeta;
 	
-	private String estado;
+	@Column(name = "idestado")
+	private int estado;
 }

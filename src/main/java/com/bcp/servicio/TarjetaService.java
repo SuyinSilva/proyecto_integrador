@@ -2,8 +2,6 @@ package com.bcp.servicio;
 
 import java.util.List;
 
-import org.springframework.data.repository.query.Param;
-
 import com.bcp.entidad.Tarjeta;
 
 public interface TarjetaService {

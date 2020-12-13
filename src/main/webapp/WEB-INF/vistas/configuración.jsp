@@ -203,23 +203,13 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 		<h4>Configuración BCP</h4>
-          <form action="tranferencia" id="id_form" method="post"> 
+          <form action=configuracionNotificacion id="id_form" method="post"> 
 		
 			<div class="form-group">
-				<label class="control-label" for="id_noti">Mostrar Notificacion</label>
-				<div class="btn-glo">
-				   <divc class="btn-iz">
-				     <button type="submit" class="btn btn-primary btn-lg" disabled="disabled">
-				   </div>
-				   <div class="btn-dere">
-				      <button type="submit" class="btn btn-primary btn-lg" disabled="disabled">
-				   </div>
-				</div>
-		    </div>
-			
-			<div class="form-group">
-			</div>
-			
+				<label class="control-label" for="id_monto">Mostrar Notificaciones</label>
+				<input id="toggle-two" type="checkbox" data-toggle="toggle" data-on="Activo" data-off="Inactivo">		
+              </div>
+		
 		    
 			<div class="form-group">
 				<button type="submit" class="btn btn-primary" >Guardar</button>
@@ -356,11 +346,18 @@
         });
     });
     </script>
- <script type="text/javascript">
-$.getJSON("cargaCuenta", {}, function(data){
-	$.each(data, function(index,item){
-		$("#id_cuenta_ori").append("<option value="+item.numero +">"+ item.numero +"</option>");
-	});
-});
+    <script>
+function cargarEstado(){
+	if(${sessionScope.objCon.estado} == 2){
+        $('#toggle-two').bootstrapToggle('off')
+	}
+else{
+       
+        $('#toggle-two').bootstrapToggle('on')
+	}
+}
 </script>
+
+ <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
 </html>
