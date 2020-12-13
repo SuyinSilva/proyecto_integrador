@@ -226,18 +226,18 @@
 			<div class="form-group">
 				<label class="control-label" for="id_cuenta_ori">Cuenta Origen</label>
 				<select id="id_cuenta_ori" name="cuentaOrigen" class='form-control'>
-					<option value=" ">[Seleccione]</option>    
+					<option value=" ">[Seleccione Cuenta de Origen]</option>    
 				</select>
 		    </div>
 		    
 			<div class="form-group">
 				<label class="control-label" for="id_monto">Monto</label>
-				<input class="form-control" type="text" id="id_monto" name="monto" placeholder="Ingrese el codigo">
+				<input class="form-control" type="text" id="id_monto" name="monto" placeholder="Ingrese el monto">
 			</div>
 			
 			<div class="form-group">
 				<label class="control-label" id="id_destino" for="id_cuenta_des">Cuenta Destino</label>
-				<input class="form-control" type="text" id="id_cuenta_des" name="cuentaDestino" placeholder="Ingrese el nombre" maxlength="15">
+				<input class="form-control" type="text" id="id_cuenta_des" name="cuentaDestino" placeholder="Ingrese la cuenta de destino" maxlength="15">
 			</div>
 			
 			<div class="form-group">

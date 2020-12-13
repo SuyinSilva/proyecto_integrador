@@ -15,6 +15,7 @@ import com.bcp.entidad.Cuenta;
 import com.bcp.entidad.HistorialCuenta;
 import com.bcp.entidad.HistorialNotificaciones;
 import com.bcp.entidad.Mensaje;
+import com.bcp.entidad.Tarjeta;
 import com.bcp.entidad.TipoMovimiento;
 import com.bcp.entidad.Tranferencia;
 import com.bcp.servicio.CuentaService;
@@ -97,6 +98,11 @@ public class MovimientoController {
 	
 	@RequestMapping("/transferencia")
 	public String regTranferencia(Tranferencia x,HttpSession session) {
+		Tarjeta objTarjeta = (Tarjeta) session.getAttribute("objTarjeta");
+		if(objTarjeta.getIdestado()==2) {
+			session.setAttribute("MENSAJE", "No se puede realizar la operacion por cuenta inactiva");
+		}
+		else {
 		//------------------------------
 		//Cuenta de Origen
 		//------------------------------
@@ -189,9 +195,10 @@ public class MovimientoController {
 	  }else {
 			session.setAttribute("MENSAJE", "No realizo transferencia");
 		}
+	
+	}
 		return "redirect:salidaTransferecia";
 	}
-	
 	@RequestMapping("/salidaTransferecia")
 	public String regTranferencia() {
 		return "movimiento2";
