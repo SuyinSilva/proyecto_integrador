@@ -42,6 +42,16 @@ public class LoginController {
 		return "login";
 	}
 	
+	@RequestMapping("/verConfiguracion")
+	public String verConfi() {
+		return "configuración";
+	}
+	
+	@RequestMapping("/verConfiguracionTarjeta")
+	public String verTarjeta() {
+		return "configuracionTarjeta";
+	}
+
 
 	@RequestMapping("/login")
 	public String login(Cliente cliente, HttpSession session, HttpServletRequest request) {
