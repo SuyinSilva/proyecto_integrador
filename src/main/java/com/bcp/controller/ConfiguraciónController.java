@@ -22,10 +22,10 @@ public class ConfiguraciónController {
 	private TarjetaService tarjetaService;
 
 	
-	@RequestMapping("/verConfiguracion")
-	public String verConfi() {
+	/*@RequestMapping("/verConfiguracion")
+	public String ver() {
 		return "configuración";
-	}
+	}*/
 
 
 	@RequestMapping("/salidaConfiguracion")
