@@ -22,12 +22,6 @@ public class ConfiguraciónController {
 	private TarjetaService tarjetaService;
 
 	
-	/*@RequestMapping("/verConfiguracion")
-	public String ver() {
-		return "configuración";
-	}*/
-
-
 	@RequestMapping("/salidaConfiguracion")
 	public String regConfiguracion() {
 		return "configuración";

@@ -44,7 +44,7 @@ public class LoginController {
 	
 	@RequestMapping("/verConfiguracion")
 	public String verConfi() {
-		return "configuración";
+		return "configuracion";
 	}
 	
 	@RequestMapping("/verConfiguracionTarjeta")
